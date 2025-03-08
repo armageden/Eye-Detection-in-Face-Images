@@ -9,7 +9,7 @@ def detect_eyes(input_dir, output_dir, model_path):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    # Initialize dlib's face detector and landmark predictor
+    # Initialize dlib's face detector and landmark 
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(model_path)
 
@@ -54,12 +54,12 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--output_dir', required=True, help='Output directory to save processed images')
     parser.add_argument('-m', '--model', default='shape_predictor_68_face_landmarks.dat', help='Path to facial landmark model file')
     
-    # Simulate command-line arguments within Jupyter Notebook
+    
     # Replace 'path/to/your/input/dir', 'path/to/your/output/dir' and 'path/to/your/model' with the actual paths
-    sys.argv = ['detect_eyes.py',  # Replace with your script name
+    sys.argv = ['detect_eyes.py',  
                 '-i', 'path/to/your/input/dir', 
                 '-o', 'path/to/your/output/dir',
-                '-m', 'path/to/your/model']  # If you are using a custom model
+                '-m', 'path/to/your/model']  
     
     args = parser.parse_args()
     
